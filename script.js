@@ -3,12 +3,6 @@ const todosContainer = document.querySelector(".todos");
 
 let listOfTodos = [];
 
-// if (listOfTodos.length < 1) {
-//   document.querySelector(".todos").style.display = "none";
-// } else {
-//   document.querySelector(".todos").style.display = "block";
-// }
-
 newTodoInput.addEventListener("change", (e) => {
   let newTodo = {
     name: e.target.value,
@@ -26,7 +20,7 @@ const renderTodos = () => {
       todoItem = todo.name;
     }
     todosContainer.innerHTML += `
-        <li class="todo-item"><span><input type="checkbox" class="check" data-check="check"></span>${todoItem}</li>
+        <li class="todo-item" draggable="true"><span><input type="checkbox" class="check" data-check="check"></span>${todoItem}</li>
       `;
   }
   if (listOfTodos.length < 1) {
